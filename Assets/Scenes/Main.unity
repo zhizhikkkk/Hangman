@@ -257,6 +257,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9310574}
   m_CullTransparentMesh: 1
+--- !u!1 &19507010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19507012}
+  - component: {fileID: 19507011}
+  m_Layer: 0
+  m_Name: WinLoseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &19507011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19507010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e0ccc7ac24c6b48ab022e58955f285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winPanel: {fileID: 1608234826}
+  losePanel: {fileID: 630555732}
+  wordsManager: {fileID: 1779738894}
+  hangman: {fileID: 790551943}
+  hangmanSprites:
+  - {fileID: 1683073603, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: -1115968423, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: 10266944, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: -589243884, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: -579416480, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: 2631874, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: 491191195, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+  - {fileID: -998060591, guid: 848930382dfffc54889ccec4955294ba, type: 3}
+--- !u!4 &19507012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19507010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19432956, y: 0.7204292, z: -0.01640221}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &75801899
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +326,7 @@ GameObject:
   - component: {fileID: 75801903}
   - component: {fileID: 75801902}
   - component: {fileID: 75801901}
+  - component: {fileID: 75801904}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -339,7 +397,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 75801902}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 75801904}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: B
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &75801902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +448,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75801899}
   m_CullTransparentMesh: 1
+--- !u!114 &75801904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75801899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &96089776
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +476,7 @@ GameObject:
   - component: {fileID: 96089780}
   - component: {fileID: 96089779}
   - component: {fileID: 96089778}
+  - component: {fileID: 96089781}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -460,7 +547,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 96089779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 96089781}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: L
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &96089779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +598,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96089776}
   m_CullTransparentMesh: 1
+--- !u!114 &96089781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96089776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &155451747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,10 +1209,10 @@ RectTransform:
   - {fileID: 1307734489}
   m_Father: {fileID: 1368778186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.256875, y: 0}
+  m_AnchorMin: {x: 0.333125, y: 0}
   m_AnchorMax: {x: 1, y: 0.69900006}
-  m_AnchoredPosition: {x: -1.9500122, y: 0.14001465}
-  m_SizeDelta: {x: 3.9000244, y: 0.2800293}
+  m_AnchoredPosition: {x: -0.4199829, y: 0.14001465}
+  m_SizeDelta: {x: 0.83999634, y: 0.27999973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244489347
 MonoBehaviour:
@@ -1173,6 +1288,7 @@ GameObject:
   - component: {fileID: 350651073}
   - component: {fileID: 350651072}
   - component: {fileID: 350651071}
+  - component: {fileID: 350651074}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1243,7 +1359,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 350651072}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 350651074}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: C
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &350651072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1410,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350651069}
   m_CullTransparentMesh: 1
+--- !u!114 &350651074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350651069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &410772989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1572,7 @@ GameObject:
   - component: {fileID: 429671333}
   - component: {fileID: 429671332}
   - component: {fileID: 429671331}
+  - component: {fileID: 429671334}
   m_Layer: 5
   m_Name: Button (23)
   m_TagString: Untagged
@@ -1498,7 +1643,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 429671332}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 429671334}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Y
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &429671332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,6 +1694,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429671329}
   m_CullTransparentMesh: 1
+--- !u!114 &429671334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429671329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &485455243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1856,7 @@ GameObject:
   - component: {fileID: 517313977}
   - component: {fileID: 517313976}
   - component: {fileID: 517313975}
+  - component: {fileID: 517313978}
   m_Layer: 5
   m_Name: Button (18)
   m_TagString: Untagged
@@ -1753,7 +1927,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 517313976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517313978}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: T
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &517313976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,6 +1978,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517313973}
   m_CullTransparentMesh: 1
+--- !u!114 &517313978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517313973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +2005,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1884,6 +2087,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32672822d5d2104690e1a3eafa706fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &549162575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2367,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564822251}
   m_CullTransparentMesh: 1
+--- !u!1 &581520760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581520761}
+  - component: {fileID: 581520763}
+  - component: {fileID: 581520762}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &581520761
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581520760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1591427642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &581520762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581520760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: StartNext
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 54.3
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &581520763
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581520760}
+  m_CullTransparentMesh: 1
 --- !u!1 &598370258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,6 +2513,7 @@ GameObject:
   - component: {fileID: 598370262}
   - component: {fileID: 598370261}
   - component: {fileID: 598370260}
+  - component: {fileID: 598370263}
   m_Layer: 5
   m_Name: Button (21)
   m_TagString: Untagged
@@ -2234,7 +2584,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 598370261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 598370263}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: W
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &598370261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2273,6 +2635,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598370258}
   m_CullTransparentMesh: 1
+--- !u!114 &598370263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598370258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &614440319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2663,7 @@ GameObject:
   - component: {fileID: 614440323}
   - component: {fileID: 614440322}
   - component: {fileID: 614440321}
+  - component: {fileID: 614440324}
   m_Layer: 5
   m_Name: Button (14)
   m_TagString: Untagged
@@ -2355,7 +2734,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 614440322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614440324}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: P
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &614440322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,6 +2784,98 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614440319}
+  m_CullTransparentMesh: 1
+--- !u!114 &614440324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614440319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
+--- !u!1 &630555732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630555733}
+  - component: {fileID: 630555735}
+  - component: {fileID: 630555734}
+  m_Layer: 5
+  m_Name: Lose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &630555733
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630555732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1341712838}
+  m_Father: {fileID: 1423966990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &630555734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630555732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &630555735
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630555732}
   m_CullTransparentMesh: 1
 --- !u!1 &643597595
 GameObject:
@@ -2540,6 +3023,7 @@ GameObject:
   - component: {fileID: 746484517}
   - component: {fileID: 746484516}
   - component: {fileID: 746484515}
+  - component: {fileID: 746484518}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2610,7 +3094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746484516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 746484518}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: A
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &746484516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,6 +3145,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746484513}
   m_CullTransparentMesh: 1
+--- !u!114 &746484518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746484513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &763938464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,6 +3173,7 @@ GameObject:
   - component: {fileID: 763938468}
   - component: {fileID: 763938467}
   - component: {fileID: 763938466}
+  - component: {fileID: 763938469}
   m_Layer: 5
   m_Name: Button (22)
   m_TagString: Untagged
@@ -2731,7 +3244,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763938467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763938469}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: X
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &763938467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2770,6 +3295,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763938464}
   m_CullTransparentMesh: 1
+--- !u!114 &763938469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763938464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &777523085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,6 +3457,7 @@ GameObject:
   - component: {fileID: 777777297}
   - component: {fileID: 777777296}
   - component: {fileID: 777777295}
+  - component: {fileID: 777777298}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2986,7 +3528,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 777777296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 777777298}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: D
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &777777296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,6 +3579,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777777293}
   m_CullTransparentMesh: 1
+--- !u!114 &777777298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777777293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &790551941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,9 +3628,9 @@ RectTransform:
   m_Father: {fileID: 1368778186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.256875, y: 0.69900006}
-  m_AnchoredPosition: {x: -1.9349365, y: 0.14498901}
-  m_SizeDelta: {x: -3.869995, y: 0.28997803}
+  m_AnchorMax: {x: 0.333125, y: 0.69900006}
+  m_AnchoredPosition: {x: -0.41992188, y: 0.14501953}
+  m_SizeDelta: {x: -0.83999634, y: 0.28999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790551943
 MonoBehaviour:
@@ -3112,6 +3682,7 @@ GameObject:
   - component: {fileID: 814348655}
   - component: {fileID: 814348654}
   - component: {fileID: 814348653}
+  - component: {fileID: 814348656}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -3182,7 +3753,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 814348654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 814348656}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: F
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &814348654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3221,6 +3804,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814348651}
   m_CullTransparentMesh: 1
+--- !u!114 &814348656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814348651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &872540591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +4368,7 @@ GameObject:
   - component: {fileID: 1013359792}
   - component: {fileID: 1013359791}
   - component: {fileID: 1013359790}
+  - component: {fileID: 1013359793}
   m_Layer: 5
   m_Name: Button (13)
   m_TagString: Untagged
@@ -3839,7 +4439,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1013359791}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013359793}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: O
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1013359791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3878,6 +4490,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013359788}
   m_CullTransparentMesh: 1
+--- !u!114 &1013359793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013359788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1032371492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,6 +4518,7 @@ GameObject:
   - component: {fileID: 1032371496}
   - component: {fileID: 1032371495}
   - component: {fileID: 1032371494}
+  - component: {fileID: 1032371497}
   m_Layer: 5
   m_Name: Button (12)
   m_TagString: Untagged
@@ -3960,7 +4589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1032371495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1032371497}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: M
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1032371495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3999,6 +4640,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032371492}
   m_CullTransparentMesh: 1
+--- !u!114 &1032371497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032371492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1145818489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4011,6 +4668,7 @@ GameObject:
   - component: {fileID: 1145818493}
   - component: {fileID: 1145818492}
   - component: {fileID: 1145818491}
+  - component: {fileID: 1145818494}
   m_Layer: 5
   m_Name: Button (15)
   m_TagString: Untagged
@@ -4081,7 +4739,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1145818492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1145818494}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Q
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1145818492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4120,6 +4790,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145818489}
   m_CullTransparentMesh: 1
+--- !u!114 &1145818494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145818489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1182815503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,6 +4818,7 @@ GameObject:
   - component: {fileID: 1182815507}
   - component: {fileID: 1182815506}
   - component: {fileID: 1182815505}
+  - component: {fileID: 1182815508}
   m_Layer: 5
   m_Name: Button (19)
   m_TagString: Untagged
@@ -4202,7 +4889,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1182815506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1182815508}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: U
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1182815506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4241,6 +4940,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182815503}
   m_CullTransparentMesh: 1
+--- !u!114 &1182815508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182815503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1211420432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,6 +4968,7 @@ GameObject:
   - component: {fileID: 1211420436}
   - component: {fileID: 1211420435}
   - component: {fileID: 1211420434}
+  - component: {fileID: 1211420437}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -4323,7 +5039,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1211420435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1211420437}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: J
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1211420435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4361,6 +5089,156 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211420432}
+  m_CullTransparentMesh: 1
+--- !u!114 &1211420437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211420432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
+--- !u!1 &1286446114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286446115}
+  - component: {fileID: 1286446117}
+  - component: {fileID: 1286446116}
+  m_Layer: 5
+  m_Name: ChosenWordTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1286446115
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286446114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1368778186}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.69900006}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.005065918, y: 0.16000366}
+  m_SizeDelta: {x: 0, y: -0.32000732}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1286446116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286446114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 56
+  m_fontSizeBase: 56
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 120
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1286446117
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286446114}
   m_CullTransparentMesh: 1
 --- !u!1 &1294874200
 GameObject:
@@ -4508,6 +5386,7 @@ GameObject:
   - component: {fileID: 1305342243}
   - component: {fileID: 1305342242}
   - component: {fileID: 1305342241}
+  - component: {fileID: 1305342244}
   m_Layer: 5
   m_Name: Button (17)
   m_TagString: Untagged
@@ -4578,7 +5457,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1305342242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305342244}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: S
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1305342242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4617,6 +5508,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305342239}
   m_CullTransparentMesh: 1
+--- !u!114 &1305342244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305342239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1307734488
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,6 +5536,7 @@ GameObject:
   - component: {fileID: 1307734492}
   - component: {fileID: 1307734491}
   - component: {fileID: 1307734490}
+  - component: {fileID: 1307734493}
   m_Layer: 5
   m_Name: Button (24)
   m_TagString: Untagged
@@ -4699,7 +5607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1307734491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1307734493}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Z
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1307734491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4738,6 +5658,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307734488}
   m_CullTransparentMesh: 1
+--- !u!114 &1307734493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307734488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1322729801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,6 +5686,7 @@ GameObject:
   - component: {fileID: 1322729805}
   - component: {fileID: 1322729804}
   - component: {fileID: 1322729803}
+  - component: {fileID: 1322729806}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -4820,7 +5757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1322729804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1322729806}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: G
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1322729804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4858,6 +5807,98 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322729801}
+  m_CullTransparentMesh: 1
+--- !u!114 &1322729806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322729801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
+--- !u!1 &1341712837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341712838}
+  - component: {fileID: 1341712840}
+  - component: {fileID: 1341712839}
+  m_Layer: 5
+  m_Name: Back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1341712838
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341712837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1751293314}
+  m_Father: {fileID: 630555733}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1341712839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341712837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1341712840
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341712837}
   m_CullTransparentMesh: 1
 --- !u!1 &1348015180
 GameObject:
@@ -4958,6 +5999,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 790551942}
+  - {fileID: 1286446115}
   - {fileID: 244489346}
   m_Father: {fileID: 1423966990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4979,7 +6021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07058824, g: 0.08627451, b: 0.1137255, a: 1}
+  m_Color: {r: 0.5539693, g: 0.6914624, b: 0.93207544, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5501,6 +6543,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1368778186}
+  - {fileID: 1608234827}
+  - {fileID: 630555733}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5508,6 +6552,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1457864422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1457864423}
+  - component: {fileID: 1457864425}
+  - component: {fileID: 1457864424}
+  m_Layer: 5
+  m_Name: Back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1457864423
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457864422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1591427642}
+  m_Father: {fileID: 1608234827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1457864424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457864422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.15313353, g: 0.7509433, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1457864425
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457864422}
+  m_CullTransparentMesh: 1
 --- !u!1 &1487042273
 GameObject:
   m_ObjectHideFlags: 0
@@ -5520,6 +6640,7 @@ GameObject:
   - component: {fileID: 1487042277}
   - component: {fileID: 1487042276}
   - component: {fileID: 1487042275}
+  - component: {fileID: 1487042278}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -5590,7 +6711,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1487042276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1487042278}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: K
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1487042276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,6 +6762,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487042273}
   m_CullTransparentMesh: 1
+--- !u!114 &1487042278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487042273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1490069026
 GameObject:
   m_ObjectHideFlags: 0
@@ -5897,6 +7046,215 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508468909}
   m_CullTransparentMesh: 1
+--- !u!1 &1591427641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591427642}
+  - component: {fileID: 1591427645}
+  - component: {fileID: 1591427644}
+  - component: {fileID: 1591427643}
+  m_Layer: 5
+  m_Name: Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1591427642
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591427641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 581520761}
+  m_Father: {fileID: 1457864423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.39, y: -8.62}
+  m_SizeDelta: {x: 226.84, y: 176.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1591427643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591427641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1591427644}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 19507011}
+        m_TargetAssemblyTypeName: WonLoseManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1591427644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591427641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1591427645
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591427641}
+  m_CullTransparentMesh: 1
+--- !u!1 &1608234826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1608234827}
+  - component: {fileID: 1608234829}
+  - component: {fileID: 1608234828}
+  m_Layer: 5
+  m_Name: Win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1608234827
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608234826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1457864423}
+  m_Father: {fileID: 1423966990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1608234828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608234826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1608234829
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608234826}
+  m_CullTransparentMesh: 1
 --- !u!1 &1621341450
 GameObject:
   m_ObjectHideFlags: 0
@@ -5909,6 +7267,7 @@ GameObject:
   - component: {fileID: 1621341454}
   - component: {fileID: 1621341453}
   - component: {fileID: 1621341452}
+  - component: {fileID: 1621341455}
   m_Layer: 5
   m_Name: Button (16)
   m_TagString: Untagged
@@ -5979,7 +7338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621341453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1621341455}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: R
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621341453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6017,6 +7388,156 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621341450}
+  m_CullTransparentMesh: 1
+--- !u!114 &1621341455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621341450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
+--- !u!1 &1712076520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712076521}
+  - component: {fileID: 1712076523}
+  - component: {fileID: 1712076522}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1712076521
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712076520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1751293314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1712076522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712076520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: TryAgain
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 48.8
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1712076523
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712076520}
   m_CullTransparentMesh: 1
 --- !u!1 &1722588602
 GameObject:
@@ -6286,6 +7807,193 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741791655}
   m_CullTransparentMesh: 1
+--- !u!1 &1751293313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751293314}
+  - component: {fileID: 1751293317}
+  - component: {fileID: 1751293316}
+  - component: {fileID: 1751293315}
+  m_Layer: 5
+  m_Name: Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1751293314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751293313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1712076521}
+  m_Father: {fileID: 1341712838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -14.01, y: -10.78}
+  m_SizeDelta: {x: 192.34, y: 176.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1751293315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751293313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1751293316}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 19507011}
+        m_TargetAssemblyTypeName: WonLoseManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1751293316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751293313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1751293317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751293313}
+  m_CullTransparentMesh: 1
+--- !u!1 &1779738893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779738895}
+  - component: {fileID: 1779738894}
+  m_Layer: 0
+  m_Name: WordsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1779738894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779738893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f3f8c25793e924fa79211c079ff1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Words:
+  - milk
+  - coffee
+  - laptop
+  - smart
+  - keyboard
+  - pen
+  - pencil
+  chosenWordTxt: {fileID: 1286446116}
+  wonLoseManager: {fileID: 19507011}
+--- !u!4 &1779738895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779738893}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19432956, y: 0.7204292, z: -0.01640221}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809349145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,6 +8006,7 @@ GameObject:
   - component: {fileID: 1809349149}
   - component: {fileID: 1809349148}
   - component: {fileID: 1809349147}
+  - component: {fileID: 1809349150}
   m_Layer: 5
   m_Name: Button (20)
   m_TagString: Untagged
@@ -6368,7 +8077,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1809349148}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1809349150}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: V
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1809349148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6407,6 +8128,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809349145}
   m_CullTransparentMesh: 1
+--- !u!114 &1809349150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809349145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1855772599
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,6 +8558,7 @@ GameObject:
   - component: {fileID: 1985602993}
   - component: {fileID: 1985602992}
   - component: {fileID: 1985602991}
+  - component: {fileID: 1985602994}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -6891,7 +8629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1985602992}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985602994}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: H
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1985602992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6930,6 +8680,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985602989}
   m_CullTransparentMesh: 1
+--- !u!114 &1985602994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985602989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &1987316572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,6 +8708,7 @@ GameObject:
   - component: {fileID: 1987316576}
   - component: {fileID: 1987316575}
   - component: {fileID: 1987316574}
+  - component: {fileID: 1987316577}
   m_Layer: 5
   m_Name: Button (26)
   m_TagString: Untagged
@@ -7012,7 +8779,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987316575}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1987316577}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: N
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1987316575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7051,6 +8830,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987316572}
   m_CullTransparentMesh: 1
+--- !u!114 &1987316577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987316572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &2021670929
 GameObject:
   m_ObjectHideFlags: 0
@@ -7063,6 +8858,7 @@ GameObject:
   - component: {fileID: 2021670933}
   - component: {fileID: 2021670932}
   - component: {fileID: 2021670931}
+  - component: {fileID: 2021670934}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -7133,7 +8929,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2021670932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021670934}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: E
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2021670932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7172,6 +8980,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021670929}
   m_CullTransparentMesh: 1
+--- !u!114 &2021670934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021670929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1 &2136966320
 GameObject:
   m_ObjectHideFlags: 0
@@ -7184,6 +9008,7 @@ GameObject:
   - component: {fileID: 2136966324}
   - component: {fileID: 2136966323}
   - component: {fileID: 2136966322}
+  - component: {fileID: 2136966325}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -7254,7 +9079,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2136966323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2136966325}
+        m_TargetAssemblyTypeName: LetterChanges, Assembly-CSharp
+        m_MethodName: AddLetter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: I
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2136966323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7293,6 +9130,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136966320}
   m_CullTransparentMesh: 1
+--- !u!114 &2136966325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136966320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33fca76d867c4ba445cbc46e1b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  image: {fileID: 0}
+  wordsManager: {fileID: 1779738894}
+  wonLoseManager: {fileID: 19507011}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7300,3 +9153,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1423966990}
   - {fileID: 1348015183}
+  - {fileID: 1779738895}
+  - {fileID: 19507012}
